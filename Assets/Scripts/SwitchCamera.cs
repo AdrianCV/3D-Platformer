@@ -34,16 +34,8 @@ public class SwitchCamera : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             playerPosition = playerPosition == playerOneTransform ? playerTwoTransform : playerOneTransform;
-            if (playerPosition == playerOneTransform)
-            {
-                playerOneMovement.canMove = true;
-                playerTwoMovement.canMove = false;
-            }
-            else if ((playerPosition == playerTwoTransform))
-            {
-                playerOneMovement.canMove = false;
-                playerTwoMovement.canMove = true;
-            }
+            playerOneMovement.canMove = !playerOneMovement.canMove;
+            playerTwoMovement.canMove = !playerTwoMovement.canMove;
         }
         // if (Input.GetKeyDown(KeyCode.Q))
         // {
