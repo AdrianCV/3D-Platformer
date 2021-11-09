@@ -29,7 +29,7 @@ public class Movement : MonoBehaviour
         {
             Move();
             Jump();
-            RotatePlayerAndCamera();
+            //RotatePlayerAndCamera();
         }
     }
 
