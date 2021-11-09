@@ -53,8 +53,6 @@ public class SwitchCamera : MonoBehaviour
         current = Mathf.MoveTowards(current, target, speed * Time.deltaTime);
         transform.position = Vector3.Lerp(firstPlayerCamera.position, secondPlayerCamera.position, current);
         currentPos = transform.position;
-        print("setxrot is " + setXROt);
-        print("xrotisset is " + xRotIsSet);
 
         if (currentPos == firstPlayerCamera.position)
         {
@@ -66,16 +64,6 @@ public class SwitchCamera : MonoBehaviour
                 firstPlayerMovement.xRotation = transform.rotation.x;
                 xRotIsSet = true;
             }
-
-            // if (transform.rotation.eulerAngles == firstPlayerCameraRotation)
-            // {
-            //     print("rotated to first player");
-
-            // }
-            // else
-            // {
-            //     LerpToTarget(firstPlayerCameraRotation);
-            // }
         }
         else if (currentPos == secondPlayerCamera.position)
         {
@@ -87,16 +75,6 @@ public class SwitchCamera : MonoBehaviour
                 secondPlayerMovement.xRotation = transform.rotation.x;
                 xRotIsSet = true;
             }
-            // if (transform.rotation.eulerAngles == secondPlayerCameraRotation)
-            // {
-            //     print("rotated to second player");
-
-            // }
-            // else
-            // {
-            //     LerpToTarget(secondPlayerCameraRotation);
-            // }
-
         }
         else
         {
