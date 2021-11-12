@@ -10,7 +10,6 @@ public class Movement : MonoBehaviour
     private Vector3 playerMovementInput;
     private Vector2 playerMouseInput;
     private bool grounded;
-    public bool canMove;
     private float lookSensitivity = 100f;
     private float xAxisClampDegrees = 45f;
     public float xRotation;
@@ -25,12 +24,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canMove)
-        {
-            Move();
-            Jump();
-            //RotatePlayerAndCamera();
-        }
+        Move();
+        Jump();
     }
 
     void Move()
