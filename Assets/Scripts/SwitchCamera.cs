@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SwitchCamera : MonoBehaviour
 {
-    public GameObject playerUpPrefab, playerDownPrefab;
+    public GameObject knightPrefab, magePrefab;
     private GameObject player, oldPlayer;
     //public Movement playerOneMovement, playerTwoMovement;
     public float speed;
@@ -36,7 +36,7 @@ public class SwitchCamera : MonoBehaviour
                 }
                 // Vector3 dist = oldPlayer.transform.position - platformDown.position;
                 // print(dist);
-                player = Instantiate(playerUpPrefab, new Vector3(playerPosition.position.x, Vector3.Distance(platformDown.position, platformUp.position) + hit.distance, playerPosition.position.z), Quaternion.Euler(0, 90, 0));
+                player = Instantiate(knightPrefab, new Vector3(playerPosition.position.x, Vector3.Distance(platformDown.position, platformUp.position) + hit.distance, playerPosition.position.z), Quaternion.Euler(0, 90, 0));
                 spawnUp = false;
                 spawnDown = true;
                 Destroy(oldPlayer);
@@ -51,7 +51,7 @@ public class SwitchCamera : MonoBehaviour
                 }
                 // Vector3 dist = oldPlayer.transform.position - platformUp.position;
                 // print(dist);
-                player = Instantiate(playerDownPrefab, new Vector3(playerPosition.position.x, hit.distance, playerPosition.position.z), Quaternion.Euler(0, 90, 0));
+                player = Instantiate(magePrefab, new Vector3(playerPosition.position.x, hit.distance, playerPosition.position.z), Quaternion.Euler(0, 90, 0));
                 spawnDown = false;
                 spawnUp = true;
                 Destroy(oldPlayer);

@@ -9,11 +9,7 @@ public class Movement : MonoBehaviour
     public float jumpSpeed;
     private Vector3 playerMovementInput;
     private Vector2 playerMouseInput;
-    private bool grounded;
-    private float lookSensitivity = 100f;
-    private float xAxisClampDegrees = 45f;
-    public float xRotation;
-    public Transform cameraTransform;
+    public bool grounded;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +34,7 @@ public class Movement : MonoBehaviour
     void Jump()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, -transform.up, out hit, 1.2f))
+        if (Physics.Raycast(transform.position, -transform.up, out hit, 1.1f))
         {
             grounded = true;
         }
@@ -51,18 +47,5 @@ public class Movement : MonoBehaviour
         {
             rb.velocity = new Vector3(rb.velocity.x, jumpSpeed, rb.velocity.z);
         }
-    }
-
-    void RotatePlayerAndCamera()
-    {
-        playerMouseInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
-
-        float mouseX = playerMouseInput.y * lookSensitivity * Time.deltaTime;
-        xRotation -= mouseX;
-        xRotation = Mathf.Clamp(xRotation, -xAxisClampDegrees, xAxisClampDegrees);
-        transform.Rotate(0f, playerMouseInput.x * 2, 0f);
-        cameraTransform.LookAt(transform);
-        Vector3 eulerAngles = cameraTransform.rotation.eulerAngles;
-        cameraTransform.rotation = Quaternion.Euler(xRotation, eulerAngles.y, 0);
     }
 }
