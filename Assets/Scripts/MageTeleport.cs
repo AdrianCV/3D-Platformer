@@ -8,6 +8,7 @@ public class MageTeleport : MonoBehaviour
     public bool canFloat;
     public float distance = 4f;
     public float floatSpeed;
+    public int numberOfteleports = 3;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,9 +18,10 @@ public class MageTeleport : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && numberOfteleports != 0)
         {
             transform.position = new Vector3(transform.position.x + distance, transform.position.y, transform.position.z);
+            numberOfteleports--;
         }
 
         if (movement.grounded && Input.GetKeyDown(KeyCode.Space))
