@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: -360913289469520149}
   m_Layer: 0
   m_Name: MagePrefab
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,8 +130,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canFloat: 0
-  distance: 4
-  floatSpeed: 3
+  distance: 3
+  floatSpeed: 1
 --- !u!114 &-4274177836637526108
 MonoBehaviour:
   m_ObjectHideFlags: 0
