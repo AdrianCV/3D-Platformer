@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AdrianScene.unity
     guid: b5179b4f93c5c894f99bafc3f07e428f
+  - enabled: 1
+    path: Assets/Scenes/MariusLVL3 1.unity
+    guid: 92da214851e2650448138deb131df37c
   m_configObjects: {}
