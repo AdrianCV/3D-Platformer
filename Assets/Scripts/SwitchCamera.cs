@@ -30,7 +30,8 @@ public class SwitchCamera : MonoBehaviour
             if (spawnUp)
             {
                 oldPlayer = player;
-                if (Physics.Raycast(player.transform.position, -player.transform.up, out hit, Mathf.Infinity))
+                LayerMask mask = LayerMask.GetMask("RaycastGround");
+                if (Physics.Raycast(player.transform.position, -player.transform.up, out hit, Mathf.Infinity, mask))
                 {
                     platformDown = hit.transform;
                 }
@@ -44,7 +45,8 @@ public class SwitchCamera : MonoBehaviour
             else if (spawnDown)
             {
                 oldPlayer = player;
-                if (Physics.Raycast(player.transform.position, -player.transform.up, out hit, Mathf.Infinity))
+                LayerMask mask = LayerMask.GetMask("RaycastGround");
+                if (Physics.Raycast(player.transform.position, -player.transform.up, out hit, Mathf.Infinity, mask))
                 {
                     platformUp = hit.transform;
                 }
