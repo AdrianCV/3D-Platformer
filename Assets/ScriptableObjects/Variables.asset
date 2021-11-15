@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff60f12279ecfb34c9a4c2b36857d366, type: 3}
   m_Name: Variables
   m_EditorClassIdentifier: 
-  checkpoint: {x: 0, y: 0, z: 0}
-  health: 0
+  checkpoint: {x: -3.08, y: 16.83, z: -0.04}
+  health: 3

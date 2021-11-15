@@ -116,7 +116,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &1951316839582904825
 MonoBehaviour:
@@ -186,7 +186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 199c7f84a4fe54643b4ca30b76126914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Respawnpos: {x: 0, y: 0, z: 0}
-  player: {fileID: 1951316839582904830}
-  Life: 3
+  variables: {fileID: 11400000, guid: cf85ec1670ffb5644b2dd3f262cc8eb4, type: 2}
+  cameraScript: {fileID: 8450839295343286336, guid: 68fd1a8e8c553a942b422f07c6a98997, type: 3}
   dead: 0

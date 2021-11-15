@@ -5,13 +5,14 @@ using UnityEngine;
 public class SwitchCamera : MonoBehaviour
 {
     public GameObject knightPrefab, magePrefab;
-    private GameObject player, oldPlayer;
+    [HideInInspector] public GameObject player, oldPlayer;
     //public Movement playerOneMovement, playerTwoMovement;
     public float speed;
     public int spawnOffset;
     public Vector3 offset;
     public Transform playerPosition, platformUp, platformDown;
-    private bool spawnUp, spawnDown;
+    [HideInInspector] public bool spawnUp, spawnDown;
+    public RaycastHit hit;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +30,6 @@ public class SwitchCamera : MonoBehaviour
             if (spawnUp)
             {
                 oldPlayer = player;
-                RaycastHit hit;
                 if (Physics.Raycast(player.transform.position, -player.transform.up, out hit, Mathf.Infinity))
                 {
                     platformDown = hit.transform;
@@ -44,7 +44,6 @@ public class SwitchCamera : MonoBehaviour
             else if (spawnDown)
             {
                 oldPlayer = player;
-                RaycastHit hit;
                 if (Physics.Raycast(player.transform.position, -player.transform.up, out hit, Mathf.Infinity))
                 {
                     platformUp = hit.transform;

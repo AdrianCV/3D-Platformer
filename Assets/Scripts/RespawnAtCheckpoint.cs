@@ -4,24 +4,24 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class RespawnAtCheckpoint : MonoBehaviour
 {
-    public Vector3 Respawnpos;
-    [SerializeField] Transform player;
-    public int Life = 3;
+    public Variables variables;
+    public SwitchCamera cameraScript;
     public bool dead;
 
     private void OnTriggerEnter(Collider other)
-
     {
-       
-                  
-       if (other.gameObject.tag == "Respawn")
+        if (other.gameObject.tag == "Respawn")
         {
-            Life--;
-            
-            transform.position = Respawnpos;
-           
-          
-            if (Life == 0)
+            variables.health--;
+
+            transform.position = variables.checkpoint;
+            cameraScript.player = Instantiate(cameraScript.knightPrefab, new Vector3(cameraScript.playerPosition.position.x, Vector3.Distance(cameraScript.platformDown.position, cameraScript.platformUp.position) + cameraScript.hit.distance, cameraScript.playerPosition.position.z), Quaternion.Euler(0, 90, 0));
+            cameraScript.spawnUp = false;
+            cameraScript.spawnDown = true;
+            Destroy(cameraScript.oldPlayer);
+
+
+            if (variables.health == 0)
             {
                 dead = true;
                 Debug.Log("You are dead");
@@ -31,9 +31,8 @@ public class RespawnAtCheckpoint : MonoBehaviour
             void LoadFirstLevel()
             {
                 SceneManager.LoadScene(0);
-                
+
             }
-           
         }
     }
 }

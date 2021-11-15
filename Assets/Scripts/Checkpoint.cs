@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
+    public Variables variables;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            other.GetComponent<RespawnAtCheckpoint>().Respawnpos = transform.position;
+            variables.checkpoint = transform.position;
         }
     }
 }
